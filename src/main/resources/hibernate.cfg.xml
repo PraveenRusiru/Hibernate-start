@@ -20,7 +20,11 @@
 <!--    query show-->
     <property name="hibernate.show_sql">true</property>
 <!--    create-create tables everytime,delete old data-->
-
+<!--schemea genaration strategy-->
     <property name="hibernate.hbm2ddl.auto">update</property>
+<!--   create - create schema  -->
+<!--   update - update schema -->
+<!--    create-drop - create a schema and drop it when programme stops-->
+<!--   validate - validate whether the schema is created in a correct way -->
   </session-factory>
 </hibernate-configuration>

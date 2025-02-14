@@ -3,6 +3,9 @@ import entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 //        Customer customer = new Customer("C001","Praveen","praveenrusiru752@gmail.com");
@@ -16,8 +19,9 @@ public class Main {
 //        if (!deleteCustomer("C001")){
 //            System.out.println("Customer not found");
 //        }
-        Customer customer = new Customer("C002","fgfg","rusiru45@gmail.com");
-        updateNewCustomer(customer);
+//
+
+
 
     }
     public static boolean saveCustomer(Customer customer){
@@ -111,4 +115,11 @@ public class Main {
             session.close();
         }
     }
+    public static List<Customer> getAllCustomers(){
+        Session session=FactoryConfiguration.getInstance().getSessionFactory();
+
+            List<Customer> customerList = session.createQuery("from Customer",Customer.class).list();
+            return customerList;
+    }
+
 }
